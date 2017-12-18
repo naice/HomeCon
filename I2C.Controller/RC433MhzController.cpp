@@ -4,6 +4,19 @@
 
 RCSwitch mySwitch = RCSwitch();
 
+void Transmit(int pin, const char * sGroup, const char * sDevice, bool onOff)
+{
+  mySwitch.enableTransmit(pin);
+  if (onOff)
+  {
+    mySwitch.switchOn(sGroup, sDevice);
+  }
+  else
+  {
+    mySwitch.switchOff(sGroup, sDevice);
+  }
+}
+
 void RC433MhzController_handleI2CWrite(uint8_t package[], uint8_t packageLength)
 {
 	// Example package bytes:
@@ -42,13 +55,10 @@ void RC433MhzController_handleI2CWrite(uint8_t package[], uint8_t packageLength)
   Serial.println("Sending 433MHz Switch=" + String(active) + " to Group=" + String(sGroup) + ", Device=" + String(sDevice));
 #endif
 
-  mySwitch.enableTransmit(pin);
-  if (active > 0)
+  for (int i = 0; i < 3; i++)
   {
-    mySwitch.switchOn(sGroup, sDevice);
+    Transmit(pin, sGroup, sDevice, active > 0);
+    delay(100);  
   }
-  else
-  {
-    mySwitch.switchOff(sGroup, sDevice);
-  }
+
 }
