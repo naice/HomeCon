@@ -4,11 +4,19 @@ using System.Text;
 
 namespace HomeCon.Model
 {
+    /// <summary>
+    /// Base device class. All information required for a https://developer.amazon.com/de/docs/device-apis/alexa-discovery.html
+    /// </summary>
     public class Device
     {
         /// <summary>
+        /// Foreign key for <see cref="DeviceGroup.Id"/>.
+        /// </summary>
+        public int DeviceGroupId { get; set; }
+        /// <summary>
         /// A device identifier. The identifier must be unique across all devices owned by an end user within the domain for the skill. In addition, the identifier needs to be consistent across multiple discovery requests for the same device. An identifier can contain any letter or number and the following special characters: _ - = # ; : ? @ &. The identifier cannot exceed 256 characters.	String that contains any letter or number and the following special characters: _ - = # ; : ? @ 
         /// </summary>
+        [Data.PrimaryKey]
         public string EndPointId { get; set; }
         /// <summary>
         /// The name of the device manufacturer. This value cannot exceed 128 characters.
@@ -33,6 +41,6 @@ namespace HomeCon.Model
         /// <summary>
         /// An array of capability objects that represents actions particular device supports and can respond to. A capability object can contain different fields depending on the type.
         /// </summary>
-        public List<string> Capabilities { get; set; }
+        public List<Capability> Capabilities { get; set; }
     }
 }

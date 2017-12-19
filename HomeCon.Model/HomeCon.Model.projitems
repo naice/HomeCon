@@ -9,8 +9,19 @@
     <Import_RootNamespace>HomeCon.Model</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Actions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bridge.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capability.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Device.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeviceGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeviceDefaults\DeviceSimpleSwitch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DisplayCategories.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\IDataAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPSync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)DeviceDefaults\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
   </ItemGroup>
 </Project>
