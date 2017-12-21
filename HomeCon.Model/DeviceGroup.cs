@@ -10,12 +10,12 @@ namespace HomeCon.Model
         /// Id
         /// </summary>
         [Data.PrimaryKey]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Foreign key for <see cref="Bridge.Id"/>
         /// </summary>
-        public int BridgeId { get; set; }
+        public string BridgeId { get; set; }
 
         /// <summary>
         /// The group name i.e. Wohnzimmer

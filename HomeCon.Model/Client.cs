@@ -10,7 +10,7 @@ namespace HomeCon.Model
         /// Id
         /// </summary>
         [Data.PrimaryKey]
-        public int Id { get; set; }
+        public string Id { get; set; }
         /// <summary>
         /// Name of the client.
         /// </summary>
@@ -19,5 +19,14 @@ namespace HomeCon.Model
         /// Email to contact the client.
         /// </summary>
         public string Email { get; set; }
+        public string EmailNormalized { get; set; }
+
+
+        // ASP STUFF
+        public string SecurityStamp { get; set; }
+        public string ConcurrencyStamp { get; set; }
+        public int AccessFailedCount { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public string Password { get; set; }
     }
 }

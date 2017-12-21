@@ -13,6 +13,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Capability.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Client.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataRelation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\IDataRelation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\PrimaryKey.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Device.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DeviceGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DeviceDefaults\DeviceSimpleSwitch.cs" />
@@ -22,6 +25,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)DeviceDefaults\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
   </ItemGroup>
 </Project>

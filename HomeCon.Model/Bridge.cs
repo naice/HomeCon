@@ -10,11 +10,11 @@ namespace HomeCon.Model
         /// Id
         /// </summary>
         [Data.PrimaryKey]
-        public int Id { get; set; }
+        public string Id { get; set; }
         /// <summary>
         /// Foreign key for <see cref="Client.Id"/>.
         /// </summary>
-        public int ClientId { get; set; }
+        public string ClientId { get; set; }
         /// <summary>
         /// IP where to reach the bridge, calls will be send here.
         /// </summary>

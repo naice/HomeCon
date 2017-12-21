@@ -6,10 +6,8 @@ namespace HomeCon.Model.Data
 {
     public interface IDataAdapter
     {
-        IEnumerable<Bridge> GetBridges();
-        IEnumerable<Client> GetClients();
-        IEnumerable<Device> GetDevices();
-        IEnumerable<DeviceGroup> GetDeviceGroups();
+        IEnumerable<DataModel> GetData<DataModel>()
+            where DataModel : class, new();
 
         void Insert(object item, IDataRelation relation);
         void Delete(object item, IDataRelation relation);

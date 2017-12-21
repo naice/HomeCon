@@ -12,7 +12,7 @@ namespace HomeCon.Model
         /// <summary>
         /// Foreign key for <see cref="DeviceGroup.Id"/>.
         /// </summary>
-        public int DeviceGroupId { get; set; }
+        public string DeviceGroupId { get; set; }
         /// <summary>
         /// A device identifier. The identifier must be unique across all devices owned by an end user within the domain for the skill. In addition, the identifier needs to be consistent across multiple discovery requests for the same device. An identifier can contain any letter or number and the following special characters: _ - = # ; : ? @ &. The identifier cannot exceed 256 characters.	String that contains any letter or number and the following special characters: _ - = # ; : ? @ 
         /// </summary>

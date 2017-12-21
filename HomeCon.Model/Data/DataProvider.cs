@@ -22,40 +22,44 @@ namespace HomeCon.Model.Data
 
 
 
-        public Client GetClientById(int clientId)
+        public Client GetClientById(string clientId)
         {
-            return Data.GetClients().Where(client => client.Id == clientId).FirstOrDefault();
+            return Data.GetData<Client>().Where(client => client.Id == clientId).FirstOrDefault();
         }
         public Client GetClientByEmail(string email)
         {
-            return Data.GetClients().Where(client => client.Email == email).FirstOrDefault();
+            return Data.GetData<Client>().Where(client => client.Email == email).FirstOrDefault();
+        }
+        public Client GetClientByEmailNormalized(string emailNormalized)
+        {
+            return Data.GetData<Client>().Where(client => client.EmailNormalized == emailNormalized).FirstOrDefault();
         }
 
-        public Bridge GetBridgeById(int bridgeId)
+        public Bridge GetBridgeById(string bridgeId)
         {
-            return Data.GetBridges().Where(bridge => bridge.Id == bridgeId).FirstOrDefault();
+            return Data.GetData<Bridge>().Where(bridge => bridge.Id == bridgeId).FirstOrDefault();
         }
-        public IEnumerable<Bridge> GetBridgesByClientId(int clientId)
+        public IEnumerable<Bridge> GetBridgesByClientId(string clientId)
         {
-            return Data.GetBridges().Where(bridge => bridge.ClientId == clientId);
+            return Data.GetData<Bridge>().Where(bridge => bridge.ClientId == clientId);
         }
 
-        public DeviceGroup GetDeviceGroupById(int deviceGroupId)
+        public DeviceGroup GetDeviceGroupById(string deviceGroupId)
         {
-            return Data.GetDeviceGroups().Where(deviceGroup => deviceGroup.Id == deviceGroupId).FirstOrDefault();
+            return Data.GetData<DeviceGroup>().Where(deviceGroup => deviceGroup.Id == deviceGroupId).FirstOrDefault();
         }
-        public IEnumerable<DeviceGroup> GetDeviceGroupsByBridgeId(int bridgeId)
+        public IEnumerable<DeviceGroup> GetDeviceGroupsByBridgeId(string bridgeId)
         {
-            return Data.GetDeviceGroups().Where(deviceGroup => deviceGroup.BridgeId == bridgeId);
+            return Data.GetData<DeviceGroup>().Where(deviceGroup => deviceGroup.BridgeId == bridgeId);
         }
 
         public Device GetDeviceById(string deviceId)
         {
-            return Data.GetDevices().Where(device => device.EndPointId == deviceId).FirstOrDefault();
+            return Data.GetData<Device>().Where(device => device.EndPointId == deviceId).FirstOrDefault();
         }
-        public IEnumerable<Device> GetDevicesByDeviceGroupId(int deviceGroupId)
+        public IEnumerable<Device> GetDevicesByDeviceGroupId(string deviceGroupId)
         {
-            return Data.GetDevices().Where(device => device.DeviceGroupId == deviceGroupId);
+            return Data.GetData<Device>().Where(device => device.DeviceGroupId == deviceGroupId);
         }
 
         public void Insert(object item)
